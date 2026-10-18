@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amigos do Hago</title>
+  <meta name="description" content="Amigos do Hago - Mural e feitos dos jogadores (Stumble Guys).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="data/players.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="site-title">Amigos do Hago</h1>
+      <nav class="menu">
+        <button class="menu-btn active" data-view="mural">Mural</button>
+        <button class="menu-btn" data-view="jogadores">Jogadores</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" class="app">
+    <section id="view-mural" class="view view-active fade-in" aria-labelledby="mural-title">
+      <h2 id="mural-title" class="section-title">Mural de Destaques</h2>
+      <p class="section-subtitle">Principais feitos recentes dos jogadores</p>
+      <div id="mural-cards" class="cards-grid"></div>
+    </section>
+
+    <section id="view-jogadores" class="view fade-hidden" aria-labelledby="jogadores-title" hidden>
+      <h2 id="jogadores-title" class="section-title">Jogadores</h2>
+
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Buscar jogador por nome..." aria-label="Buscar jogador" />
+        <select id="order">
+          <option value="nome-asc">Nome (A-Z)</option>
+          <option value="nome-desc">Nome (Z-A)</option>
+          <option value="feitos-desc">Mais feitos</option>
+          <option value="feitos-asc">Menos feitos</option>
+        </select>
+      </div>
+
+      <div id="players-list" class="players-list"></div>
+
+      <article id="player-profile" class="player-profile" aria-live="polite" aria-atomic="true">
+        <div class="profile-empty">Selecione um jogador para ver os detalhes e emblemas.</div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <strong class="footer-text">
+        Desenvolvido por Patrick - Todos os direitos reservados 2026
+      </strong>
+    </div>
+  </footer>
+</body>
+</html>
